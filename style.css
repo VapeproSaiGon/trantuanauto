@@ -1,0 +1,342 @@
+body{
+  background-image: url(abc.jpg_large);
+}
+.headerr{
+  margin: 20px;
+display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+svg {
+    width: 600px;
+    height: auto;
+    --stroke-dash: 46;
+    --stroke-dash-negative: -46;
+  }
+
+  g#car {
+    transform: translateX(-3px);
+    animation: translate 2s ease-in-out infinite;
+  }
+
+  path#shadow {
+    animation: skew 2s ease-in-out infinite;
+  }
+
+  g.wheels use {
+    animation: rotate 2s linear infinite;
+  }
+
+  path.air {
+
+    stroke-dasharray: var(--stroke-dash);
+    stroke-dashoffset: var(--stroke-dash);
+    /* ! the delay of the animation is also set up in the script  */
+    animation: offset 2s linear infinite;
+    /* opacity to hide the obnoxious dots otherwise shown on firefox and edge */
+    opacity: 0;
+  }
+  
+
+  @keyframes translate {
+    50% {
+      transform: translateX(3px);
+    }
+    100% {
+      transform: translateX(-3px);
+    }
+  }
+  @keyframes skew {
+    50% {
+      transform: skewX(-20deg);
+    }
+  }
+  @keyframes rotate {
+    50% {
+      transform: rotate(4turn);
+    }
+    100% {
+      transform: rotate(6turn);
+    }
+  }
+  @keyframes offset {
+    1% {
+      opacity: 1;
+    }
+    15% {
+      stroke-dashoffset: 0;
+      opacity: 1;
+    }
+    24% {
+      opacity: 1;
+    }
+    25% {
+      opacity: 0;
+     
+      stroke-dashoffset: var(--stroke-dash-negative);
+    }
+    100% {
+      stroke-dashoffset: var(--stroke-dash-negative);
+    }
+  }
+  
+
+
+  /* ......................... */
+
+  
+
+  
+ .st {
+    height: 100%;
+    background-color: #060001;
+  }
+  
+  .st {
+    text-align: center;
+    flex: 0 1 auto;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: "Cochin";
+    font-size: 5em;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 2px red;
+    filter: drop-shadow(0 0 15px rgba(255,0,0,1));
+  }
+  
+  .l {
+    color: rgb(206, 28, 12);
+    font-size: 1.4em;
+    vertical-align: -.175em;
+    margin-top: -.2em;
+  }
+  
+  .full {
+    flex: 1 0 100%;
+  }
+  
+  .w {
+    white-space: nowrap;
+     color: rgb(243, 203, 199);
+  }
+  
+  .decorator {
+    height: .1em;
+    border: 2px solid rgb(207, 172, 172);
+    flex: 1 0 auto;
+  }
+  
+  .input {
+    position: absolute;
+    bottom: 2em;
+    text-align: center;
+    font: inherit;
+    appearance: none;
+    color: red;
+    background-color: transparent;
+    border: 2px dotted transparent;
+    border-bottom-color: currentColor;
+    opacity: .75;
+    
+    &:focus {
+      opacity: 1;
+      outline: none;
+    }
+  }
+/* 2 */
+html, body {margin:0; overflow:hidden;}
+img {
+    width: 8vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+}
+  
+  /* Center everything */
+  body {
+	margin: 0;
+}
+
+.container {
+
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+	height: 100vh;
+	width: 100vw;
+}
+
+.star {
+	background-color: #6a9cd6;
+	box-shadow: 0 0 10px rgba(255, 255, 255);
+	border-radius: 50%;
+	position: absolute;
+	opacity: 0;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: 4px;
+	width: 4px;
+}
+/* .. */
+
+
+
+:root{
+    --background-dark: #2d3548;
+    --text-light: rgba(255,255,255,0.6);
+    --text-lighter: rgba(255,255,255,0.9);
+    --spacing-s: 8px;
+    --spacing-m: 16px;
+    --spacing-l: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 64px;
+    --width-container: 1200px;
+  }
+  
+  
+  .hero-section{
+    align-items: flex-start;
+
+    display: flex;
+    min-height: 100%;
+    justify-content: center;
+    padding: var(--spacing-xxl) var(--spacing-l);
+  }
+  
+  .card-grid{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: var(--spacing-l);
+    grid-row-gap: var(--spacing-l);
+    max-width: var(--width-container);
+    width: 100%;
+  }
+  
+  @media(min-width: 540px){
+    .card-grid{
+      grid-template-columns: repeat(2, 1fr); 
+    }
+  }
+  
+  @media(min-width: 960px){
+    .card-grid{
+      grid-template-columns: repeat(4, 1fr); 
+    }
+  }
+  
+  .card{
+    list-style: none;
+    position: relative;
+  }
+  
+  .card:before{
+    content: '';
+    display: block;
+    padding-bottom: 150%;
+    width: 100%;
+  }
+  
+  .card__background{
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--spacing-l);
+    bottom: 0;
+    filter: brightness(0.75) saturate(1.2) contrast(0.85);
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform-origin: center;
+
+    transition: 
+      filter 200ms linear,
+      transform 200ms linear;
+  }
+  
+  .card:hover .card__background{
+    transform: scale(1.05) translateZ(0);
+  }
+  
+  .card-grid:hover > .card:not(:hover) .card__background{
+    filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+  }
+  
+  .card__content{
+    left: 0;
+    padding: var(--spacing-l);
+    position: absolute;
+    top: 0;
+  }
+  
+  .card__category{
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-s);
+    text-transform: uppercase;
+  }
+  
+  .card__heading{
+    color: var(--text-lighter);
+    font-size: 1.9rem;
+    text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+    line-height: 1.4;
+    word-spacing: 100vw;
+  }
+  /* /// */
+ /* Settings */
+.containerr{
+
+    display: flex;
+      justify-content: center;
+      align-items: center;
+    
+    
+}
+
+ #apple,
+ #twitter,
+ #github,
+ #facebook {
+   font-size: 4em;
+   background-color: #090cd4;
+   color: #ffffff;
+   box-shadow: 2px 2px 2px #00000080, 10px 1px 12px #00000080,
+     2px 2px 10px #00000080, 2px 2px 3px #00000080, inset 2px 2px 10px #00000080,
+     inset 2px 2px 10px #00000080, inset 2px 2px 10px #00000080,
+     inset 2px 2px 10px #00000080;
+   border-radius: 29px;
+   padding: 11px 19px;
+   margin: 0 20px;
+   animation: animate 3s linear infinite;
+   text-shadow: 0 0 50px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff,
+     0 0 200px #0072ff;
+ }
+ #twitter {
+   animation-delay: 0.3s;
+ }
+ #facebook {
+   animation-delay: 0.7s;
+ }
+ #github {
+   animation-delay: 0.1s;
+ }
+ 
+ @keyframes animate {
+   from {
+     filter: hue-rotate(0deg);
+   }
+   to {
+     filter: hue-rotate(360deg);
+   }
+ }
+ 
