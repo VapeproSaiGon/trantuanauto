@@ -332,41 +332,78 @@
 	<i class="decorator"></i>
   </div>
   <div class="container" id="container">
-
-	<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-
-<section class="hero-section">
-  <div class="card-grid">
-    <a class="card" href="#">
-      <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1557177324-56c542165309?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)"></div>
-      <div class="card__content">
-        <p class="card__category">Category</p>
-        <h3 class="card__heading">Example Card Heading</h3>
-      </div>
-    </a>
-    <a class="card" href="#">
-      <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1557187666-4fd70cf76254?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)"></div>
-      <div class="card__content">
-        <p class="card__category">Category</p>
-        <h3 class="card__heading">Example Card Heading</h3>
-      </div>
-    </a>
-    <a class="card" href="#">
-      <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1556680262-9990363a3e6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)"></div>
-      <div class="card__content">
-        <p class="card__category">Category</p>
-        <h3 class="card__heading">Example Card Heading</h3>
-      </div>
-    </li>
-    <a class="card" href="#">
-      <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1557004396-66e4174d7bf6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)"></div>
-      <div class="card__content">
-        <p class="card__category">Category</p>
-        <h3 class="card__heading">Example Card Heading</h3>
-      </div>
-    </a>
-  <div>
-</section> -->
+	<div class="gt">
+	<div class="cardd">
+		Magic Card
+		<video autoplay loop muted>
+            <source src="a2.mp4" type="video/mp4">
+        </video>
+	  </div>
+	</div>
+	<div class="diachi">
+	<h3 data-text="02, Chế Lan Viên, Phường Tây Phú, Quận Bình Thạnh">02, Chế Lan Viên, Phường Tây Phú, Quận Bình Thạnh</h3>
+	
+</div>
+<div class="diachii">
+	<h4 data-text="SDT: 0906.407.798">SDT: 0906 407 798</h4>
+</div>
+<div class="man">
+	<div class="scene">
+		<div class="cube">
+		  <div class="side back"></div>
+		  <div class="side left"></div>
+		  <div class="side right"></div>
+		  <div class="side top"></div>
+		  <div class="side bottom"></div>
+		  <div class="side front"></div>
+		</div>
+	  </div>
+	  <div class="scene">
+		<div class="cube1">
+		  <div class="side back1"></div>
+		  <div class="side left1"></div>
+		  <div class="side right1"></div>
+		  <div class="side top1"></div>
+		  <div class="side bottom1"></div>
+		  <div class="side front1"></div>
+		</div>
+	  </div>
+	</div>
+	
+	  <Script>
+		/*
+	  This script is specifically designed to dynamically generate pagination markers for the carousel.
+	  The actual animation logic is handled using the CSS version of the Scroll-driven Animations API.
+	*/
+	const images = document.querySelectorAll('#carousel img');
+	const pagination = document.querySelector('#pagination');
+	
+	function createPaginationMarkers() {
+	  images.forEach((img) => {
+		const imgViewName = `--${img.id}`;
+		img.style.viewTimelineName = imgViewName;
+		const marker = document.createElement('button');
+		marker.type = 'button';
+		marker.role = 'tab';
+		marker.style.animationTimeline = imgViewName;
+		marker.addEventListener('click', () => img.scrollIntoView());
+		pagination.appendChild(marker);
+	  });
+	
+	  document.body.style.timelineScope = `${Array.from(images).map(
+		(image) => image.style.viewTimelineName
+	  )}`;
+	}
+	
+	// Check browser support for Scroll-driven Animations
+	if (CSS.supports('view-timeline-axis', 'inline')) {
+	  createPaginationMarkers();
+	}
+	
+	// Start scrolling from the second image
+	images[1].scrollIntoView();
+	
+	  </Script>	
 </div>
 
 
